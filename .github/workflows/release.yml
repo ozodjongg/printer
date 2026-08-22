@@ -1,0 +1,45 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    name: Build and Create Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Install dependencies
+        run: go mod download
+
+      - name: Build Windows Binaries
+        run: |
+          # 64-bit Windows uchun (.exe fayl hajmini kichikroq va ixcham qilish uchun -ldflags="-s -w" ishlatiladi)
+          GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" -o telegram-printer-win-amd64.exe main.go
+          
+          # 32-bit Windows uchun (eskiroq tizimlar uchun)
+          GOOS=windows GOARCH=386 go build -ldflags="-s -w" -o telegram-printer-win-386.exe main.go
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            telegram-printer-win-amd64.exe
+            telegram-printer-win-386.exe
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

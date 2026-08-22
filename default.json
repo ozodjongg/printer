@@ -1,0 +1,8 @@
+{
+  "bot_token": "YOUR_TELEGRAM_BOT_TOKEN",
+  "password": "your_secret_password",
+  "allowed_users": [
+    123456789
+  ],
+  "download_dir": "./downloads"
+}
