@@ -10,9 +10,9 @@ Telefoningizdan Telegram bot orqali yuborilgan har qanday hujjat (PDF, Word, TXT
 
 ## ✨ Xususiyatlar
 
-- 🚀 **Nol konfiguratsiya (Zero-config setup):** Birinchi marta ishga tushganda `config.json` faylini interaktiv tarzda o'zi yaratadi.
+- 🚀 **Nol konfiguratsiya (Zero-config setup):** Birinchi marta ishga tushganda `telegram.json` faylini interaktiv tarzda o'zi yaratadi.
 - 🔒 **Parol orqali avtorizatsiya:** Noma'lum foydalanuvchilar chop etishidan himoyalangan. Parolni kiritgan foydalanuvchilar avtomatik ruxsat oladi.
-- 💾 **Dinamik saqlash:** Ruxsat berilgan foydalanuvchilar ID'si avtomatik ravishda `config.json` fayliga saqlanadi.
+- 💾 **Dinamik saqlash:** Ruxsat berilgan foydalanuvchilar ID'si avtomatik ravishda `telegram.json` fayliga saqlanadi.
 - 🖨️ **Windows Native Print:** Tashqi og'ir dasturlarsiz, Windows'ning ichki `ShellExecuteW` WinAPI mexanizmi orqali fonda chop etadi.
 - ⚡ **Yuqori tezlik va yengillik:** Go tilida yozilgani sababli tizim resurslarini minimal darajada sarflaydi.
 
@@ -32,7 +32,7 @@ Telefoningizdan Telegram bot orqali yuborilgan har qanday hujjat (PDF, Word, TXT
 1. [Releases](../../releases) bo'limidan eng so'nggi `telegram-printer-win-amd64.exe` faylini yuklab oling.
 2. `.exe` faylini alohida papkaga joylang va uni ishga tushiring.
 3. Konsol oynasida so'ralgan **Bot Token** va **Parol**ni kiriting.
-4. Dastur avtomatik ravishda `config.json` faylini yaratadi va botni ishga tushiradi.
+4. Dastur avtomatik ravishda `telegram.json` faylini yaratadi va botni ishga tushiradi.
 
 ### 2. Manba kodidan (Source Code)
 ```bash
